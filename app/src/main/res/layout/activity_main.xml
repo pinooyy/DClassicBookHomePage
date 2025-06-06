@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="#755F45"
+        android:padding="10dp">
+
+        <!-- Book Icon -->
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/menujadi"
+        android:background="@android:color/transparent"
+        android:contentDescription="Menu" />
+
+        <!-- Nama Aplikasi -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="43dp"
+            android:layout_height="37dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/dclassiclogo" />
+    </RelativeLayout>
+
+    <!-- DASHBOARD MENU (TEKS) -->
+    <LinearLayout
+        android:id="@+id/dashboardMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/headerLayout"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:background="#C9A99A"
+        android:visibility="gone"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btnAllBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Books"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnOurStores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Store"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Main Content -->
+<ScrollView
+    android:id="@+id/homeView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="66dp"
+    android:padding="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/greetingText"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Hello, User" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Featured Books"
+            android:paddingTop="16dp"
+            android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/featuredView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false">
+    </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Stores"
+            android:paddingTop="16dp"
+            android:textStyle="bold"/>
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="#755F45"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+
+
+                <!-- Perlu FRAME/RELATIVE agar tombol bisa diposisikan -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/btnNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⟩"
+                        android:textSize="32sp"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/btnPrev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⟨"
+                        android:textSize="32sp"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+<!--        </RelativeLayout>-->
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

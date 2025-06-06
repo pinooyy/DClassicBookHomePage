@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_books"
+        android:title="All Books" />
+    <item
+        android:id="@+id/nav_store"
+        android:title="Our Store" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Log Out" />
+</menu>
