@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="#755F45"
+        android:padding="10dp">
+
+        <!-- Book Icon -->
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/menujadi"
+            android:background="@android:color/transparent"
+            android:contentDescription="Menu" />
+
+        <!-- Nama Aplikasi -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="43dp"
+            android:layout_height="37dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/dclassiclogo" />
+    </RelativeLayout>
+
+    <!-- DASHBOARD MENU (TEKS) -->
+    <LinearLayout
+        android:id="@+id/dashboardMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/headerLayout"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:background="#C9A99A"
+        android:visibility="gone"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btnAllBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Books"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnOurStores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Store"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout" />
+
+    <!-- Hidden Menu (Optional) -->
+    <LinearLayout
+        android:id="@+id/dashboardMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/headerLayout"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:background="#C9A99A"
+        android:visibility="gone"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnOurStores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Store"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:textColor="#5E2A2B"
+            android:background="@android:color/transparent"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
